@@ -233,7 +233,7 @@ namespace TaskiUsluga.Models
 
         public List<Automobil> IzcitajAutomobileIzBaze()
         {
-            string path = @"..\App_Data\BazaKorisnika.txt";
+            string path = @"..\App_Data\BazaAutomobila.txt";
             List<Automobil> izcitan = new List<Automobil>();
             FileStream stream = new FileStream(path, FileMode.Open);
             StreamReader sr = new StreamReader(stream);
