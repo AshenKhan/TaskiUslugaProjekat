@@ -1,0 +1,2 @@
+D:\Faks i Skola\TaskiUslugaProjekat\PROJEKAT\TaskiUsluga\obj\Debug\TaskiUsluga.csprojAssemblyReference.cache
+D:\Faks i Skola\TaskiUslugaProjekat\PROJEKAT\TaskiUsluga\obj\Debug\TaskiUsluga.csproj.CoreCompileInputs.cache

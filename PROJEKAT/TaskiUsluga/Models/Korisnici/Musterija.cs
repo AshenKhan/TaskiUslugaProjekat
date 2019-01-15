@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TaskiUsluga.Models.Enumi;
+using TaskiUsluga.Models;
 using TaskiUsluga.Models.OstaleKlase;
 
 namespace TaskiUsluga.Models.Korisnici
@@ -18,8 +19,8 @@ namespace TaskiUsluga.Models.Korisnici
         private string jmbg;
         private string kontaktTelefon;
         private string email;
-        private Uloga ulogaKorisnika = Uloga.musterija;
-        private List<Voznja> voznje = BazaPodataka.IzcitajVoznjeIzBaze();
+        private Uloga ulogaKorisnika;
+        private List<Voznja> voznje;
 
         public Musterija() { }
         public Musterija(int id, string ki, string l, string i, string pr, Pol pol, string j, string kt, string e)
@@ -33,6 +34,8 @@ namespace TaskiUsluga.Models.Korisnici
             Jmbg = j;
             KontaktTelefon = kt;
             Email = e;
+            UlogaKorisnika = Uloga.vozac;
+            Voznje = IzcitajVoznjeIzBaze();
         }
 
         public int Id { get { return id; } set { id = value; } }
@@ -53,7 +56,7 @@ namespace TaskiUsluga.Models.Korisnici
 
         public string Email { get { return email; } set { email = value; } }
 
-        public Uloga UlogaKorisnika { get { return ulogaKorisnika; } }
+        public Uloga UlogaKorisnika { get { return ulogaKorisnika; } set { ulogaKorisnika = value; } }
 
         public List<Voznja> Voznje { get { return voznje; } set { voznje = value; } }
     }

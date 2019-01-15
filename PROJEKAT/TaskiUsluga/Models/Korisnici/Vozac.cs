@@ -20,7 +20,7 @@ namespace TaskiUsluga.Models.Korisnici
         private string jmbg;
         private string kontaktTelefon;
         private string email;
-        private Uloga ulogaKorisnika = Uloga.vozac;
+        private Uloga ulogaKorisnika;
         private List<Voznja> voznje = BazaPodataka.IzcitajVoznjeIzBaze();
         private Lokacija lokacija;
         private Automobil auto;
@@ -38,6 +38,7 @@ namespace TaskiUsluga.Models.Korisnici
             Jmbg = j;
             KontaktTelefon = kt;
             Email = e;
+            UlogaKorisnika = Uloga.vozac;
             Lokacija = lok;
             Auto = a;
         }
@@ -67,5 +68,6 @@ namespace TaskiUsluga.Models.Korisnici
         public Automobil Auto { get => auto; set => auto = value; }
 
         public List<Voznja> Voznje { get { return voznje; } set { voznje = value; } }
+
     }
 }

@@ -33,7 +33,8 @@ namespace TaskiUsluga.Models.Korisnici
             Jmbg = j;
             KontaktTelefon = kt;
             Email = e;
-            Voznje = new List<Voznja>
+            Voznje = new List<Voznja>();
+            UlogaKorisnika = Uloga.dispecer;
         }
 
         public int Id { get { return id; } set { id = value; } }
@@ -54,7 +55,7 @@ namespace TaskiUsluga.Models.Korisnici
 
         public string Email { get { return email; } set { email = value; } }
 
-        public Uloga UlogaKorisnika { get { return ulogaKorisnika; } }
+        public Uloga UlogaKorisnika { get { return ulogaKorisnika; } set { ulogaKorisnika = value; } }
 
         public List<Voznja> Voznje { get { return voznje; } set { voznje = value; } }
     }

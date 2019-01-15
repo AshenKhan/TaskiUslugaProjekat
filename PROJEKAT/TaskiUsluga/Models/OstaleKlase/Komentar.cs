@@ -30,5 +30,10 @@ namespace TaskiUsluga.Models.OstaleKlase
         public DateTime DatumObjave { get; set; }
         public string Voznja { get; set; }
         public Ocena OcenaVoznje { get; set; }
+
+        public override string ToString()
+        {
+            return Id.ToString() + ";" + Opis.ToString() + ";" + DatumObjave.ToString() + ";" + Voznja.ToString() + ";" + OcenaVoznje.ToString() + ";";
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace TaskiUsluga.Models.OstaleKlase
 
         public override string ToString()
         {
-            return "Koordinate: " + X + ", " + Y + ".\n Adresa: " + Adresa.ToString();
+            return Id.ToString() + ";" + X.ToString() + ";" + Y.ToString() + ";" + Adresa.ToString() + ";";
         }
     }
 }

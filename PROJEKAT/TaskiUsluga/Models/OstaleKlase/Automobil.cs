@@ -32,5 +32,10 @@ namespace TaskiUsluga.Models.OstaleKlase
         public string Registracija { get; set; }
         public string BrojVozila { get; set; }
         public Tip_Auta TipAutomobila { get; set; }
+
+        public override string ToString()
+        {
+            return Id.ToString() + ";" + Vozac.ToString() + ";" + Godiste.ToString() + ";" + Registracija.ToString() + ";" + BrojVozila.ToString() + ";" + TipAutomobila.ToString() + ";";
+        }
     }
 }

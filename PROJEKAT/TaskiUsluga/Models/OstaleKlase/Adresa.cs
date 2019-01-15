@@ -37,7 +37,7 @@ namespace TaskiUsluga.Models.OstaleKlase
 
         public override string ToString()
         {
-            return ulica.ToString() + ", " + broj.ToString() + ", " + naseljenoMesto.ToString() + ", " + pozivniBroj.ToString();
+            return ulica.ToString() + ";" + broj.ToString() + ";" + naseljenoMesto.ToString() + ";" + pozivniBroj.ToString() + ";";
         }
     }
 }
