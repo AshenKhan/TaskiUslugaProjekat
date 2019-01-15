@@ -35,7 +35,7 @@ namespace TaskiUsluga.Models.Korisnici
             KontaktTelefon = kt;
             Email = e;
             UlogaKorisnika = Uloga.vozac;
-            Voznje = IzcitajVoznjeIzBaze();
+            Voznje = new List<Voznja>();
         }
 
         public int Id { get { return id; } set { id = value; } }

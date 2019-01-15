@@ -21,7 +21,7 @@ namespace TaskiUsluga.Models.Korisnici
         private string kontaktTelefon;
         private string email;
         private Uloga ulogaKorisnika;
-        private List<Voznja> voznje = BazaPodataka.IzcitajVoznjeIzBaze();
+        private List<Voznja> voznje;
         private Lokacija lokacija;
         private Automobil auto;
 
@@ -41,6 +41,7 @@ namespace TaskiUsluga.Models.Korisnici
             UlogaKorisnika = Uloga.vozac;
             Lokacija = lok;
             Auto = a;
+            Voznje = new List<Voznja>();
         }
 
         public int Id { get { return id; } set { id = value; } }

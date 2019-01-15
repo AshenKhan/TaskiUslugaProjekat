@@ -35,6 +35,7 @@ namespace TaskiUsluga.Models.Korisnici
             Email = e;
             Voznje = new List<Voznja>();
             UlogaKorisnika = Uloga.dispecer;
+            Voznje = new List<Voznja>();
         }
 
         public int Id { get { return id; } set { id = value; } }
