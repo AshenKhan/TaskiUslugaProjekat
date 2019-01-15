@@ -16,6 +16,7 @@ namespace TaskiUsluga.Models
         public List<Vozac> listaVozaca = new List<Vozac>();
         public List<Dispecer> listaDispecera = new List<Dispecer>();
         public List<Voznja> listaVoznje = new List<Voznja>();
+        public List<Automobil> listaAutomobila = new List<Automobil>();
 
         public void UcitajKorisnikauBazu(Musterija k)
         {
@@ -81,6 +82,24 @@ namespace TaskiUsluga.Models
             sb.Append(v.Musterija).Append(";").Append(v.Odrediste).Append(";");
             sb.Append(v.Dispecer).Append(";").Append(v.Vozac).Append(";").Append(v.Iznos).Append(";");
             sb.Append(v.Komentar).Append(";").Append(v.Status).Append(";\n");
+
+            // Add text to the file.
+            if (!File.Exists(path))
+                File.WriteAllText(path, sb.ToString());
+            else
+                File.AppendAllText(path, sb.ToString());
+
+            // Open the file to read from.
+            string readText = File.ReadAllText(path);
+            Console.WriteLine(readText);
+        }
+
+        public void UcitajAutomobiluBazu(Automobil k)
+        {
+            string path = @"..\App_Data\BazaAutomobila.txt";
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(k.Id).Append(";").Append(k.Vozac).Append(";").Append(k.Godiste).Append(";").Append(k.Registracija).Append(";").Append(k.BrojVozila).Append(";").Append(k.TipAutomobila).Append(";");
 
             // Add text to the file.
             if (!File.Exists(path))
@@ -210,6 +229,29 @@ namespace TaskiUsluga.Models
 
             return izcitan;
 
+        }
+
+        public List<Automobil> IzcitajAutomobileIzBaze()
+        {
+            string path = @"..\App_Data\BazaKorisnika.txt";
+            List<Automobil> izcitan = new List<Automobil>();
+            FileStream stream = new FileStream(path, FileMode.Open);
+            StreamReader sr = new StreamReader(stream);
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] tokens = line.Split(';');
+                Enum.TryParse(tokens[5], out Tip_Auta ta);
+
+                Automobil m = new Automobil(Int32.Parse(tokens[0]), tokens[1], tokens[2], tokens[3], tokens[4], ta);
+                listaAutomobila.Add(m);
+                izcitan.Add(m);
+
+            }
+            sr.Close();
+            stream.Close();
+
+            return izcitan;
         }
     }
 
